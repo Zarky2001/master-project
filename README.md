@@ -27,6 +27,12 @@ npm run dev
 npm run build
 ```
 
+## GitHub Pages 发布
+
+仓库已包含 GitHub Actions 自动发布配置。首次使用时，在 GitHub 仓库进入
+`Settings → Pages`，将 `Build and deployment` 的来源设为 `GitHub Actions`。
+之后每次向 `main` 分支提交代码，Actions 都会自动构建并更新网页。
+
 ## 数据与隐私
 
 本项目不会把你的任务、实验数据或健康记录写入代码仓库。运行时数据默认保存在浏览器本地存储中；如连接本地文件夹，会写入你自行选择文件夹中的 `phd-master-workspace-data.json`。

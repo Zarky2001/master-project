@@ -9,6 +9,8 @@ const localBindingConfig = {
 };
 
 export default defineConfig(async () => {
+  const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+  const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === "true" && Boolean(repositoryName);
   // Keep Wrangler and Miniflare state project-local. Application environment
   // values belong in ignored `.env*` files.
   process.env.WRANGLER_WRITE_LOGS ??= "false";
@@ -19,6 +21,7 @@ export default defineConfig(async () => {
   const { cloudflare } = await import("@cloudflare/vite-plugin");
 
   return {
+    base: isGitHubPagesBuild ? `/${repositoryName}/` : "/",
     server: {
       host: "0.0.0.0",
       allowedHosts: ["terminal.local"],

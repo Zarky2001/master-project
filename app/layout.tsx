@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+export const dynamic = "force-static";
+
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+const pagesBase = process.env.GITHUB_ACTIONS === "true" && repositoryName ? `/${repositoryName}` : "";
+
 export const metadata: Metadata = {
   title: "Yang · PhD Master Workspace",
   description: "博士生自律、进度与科研管理工作台。",
@@ -15,8 +20,8 @@ export const metadata: Metadata = {
     description: "博士生自律、进度与科研管理工作台。",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: `${pagesBase}/favicon.svg`,
+    shortcut: `${pagesBase}/favicon.svg`,
   },
 };
 
