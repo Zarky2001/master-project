@@ -146,8 +146,19 @@ input::placeholder, textarea::placeholder { color: #a2afbf; }
 .daily-plan-table tr.is-completed { background: #fff5f5; }
 .daily-plan-table tr.is-completed td { border-bottom-color: #f2d1d3; }
 .daily-plan-table tr.is-completed td > strong, .daily-plan-table tr.is-completed td:nth-child(2) > strong { color: #a2252d; }
+.daily-plan-table tr.is-overdue { background: #fffaf1; }
+.daily-plan-table tr.is-overdue td:first-child { border-left: 3px solid #e38b2c; }
+.plan-group-heading td { padding: 10px 12px; border-bottom: 1px solid #efd8b5; background: #fff5e5; }
+.plan-group-heading td, .plan-group-divider td { display: table-cell; }
+.plan-group-heading span, .plan-group-heading b { display: inline-block; }
+.plan-group-heading span { color: #9b581c; font-size: 12px; font-weight: 900; }
+.plan-group-heading b { margin-left: 10px; color: #bd742c; font-size: 11px; }
+.plan-group-divider td { position: relative; padding: 16px 8px 9px; border-bottom: 2px solid #d5e1ed; background: #fff; }
+.plan-group-divider span { position: relative; z-index: 1; display: inline-block; padding-right: 12px; color: #285c91; background: #fff; font-size: 12px; font-weight: 900; }
+.plan-group-divider i { position: absolute; right: 8px; bottom: 14px; left: 8px; height: 2px; background: #d5e1ed; }
 .plan-table-status { display: inline-flex; min-height: 25px; align-items: center; padding: 4px 9px; border-radius: 99px; font-size: 11px; font-weight: 900; }
 .plan-table-status.planned { color: #9d5d1f; background: #fff1df; }
+.plan-table-status.overdue { color: #fff; background: #d9771d; box-shadow: 0 0 0 3px rgba(217,119,29,.12); }
 .plan-table-status.done { color: #fff; background: #c9252d; box-shadow: 0 0 0 3px rgba(201,37,45,.12); }
 .button-completed { color: #fff; background: #c9252d; border-color: #b91f28; }
 .button-completed:hover { background: #a91922; }
